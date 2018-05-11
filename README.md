@@ -49,7 +49,7 @@ it('creates a 1.2 client', (done) => {
 });
 
 it('Returns greeting as soap 1.2', (done) => {
-  client12.sayHello({firstName: 'Jonny McSoapington' }, (err, res) => {
+  client12.sayHello({ firstName: 'Jonny McSoapington' }, (err, res) => {
     expect(err).to.not.exist;
     expect(res).to.contain('1.2 version');
     // Uncaught AssertionError: expected 'Hello Jonny McSoapington, greetings from 1.1 version.' to include '1.2 version'
