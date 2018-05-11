@@ -30,7 +30,7 @@ describe('Soap test', () => {
 
   it('creates a 1.2 client', (done) => {
     const options = {
-      envelopeKey: 'soap',
+      envelopeKey: 'soap12',
       forceSoapVersion: '1.2'
     }
     soap.createClient(url, options, (err, client) => {
@@ -52,6 +52,7 @@ describe('Soap test', () => {
     client12.sayHello({firstName: 'Jonny McSoapington' }, (err, res) => {
       expect(err).to.not.exist;
       expect(res).to.contain('1.2 version');
+      // Uncaught AssertionError: expected 'Hello Jonny McSoapington, greetings from 1.1 version.' to include '1.2 version'
       done();
     });
   });
